@@ -16,6 +16,7 @@ import re
 import model_script
 
 
+model='en_core_web_sm'
 
 # connect to the mongoDB cloud
 # connection_url='mongodb+srv://abin:dbpassword@cluster0.b8byd.mongodb.net/test?retryWrites=true&w=majority'
@@ -41,7 +42,7 @@ def get_delay():
     
     text=result['text']
     
-    mydict=model_script.model_builder(text)
+    mydict=model_script.model_builder(text,model)
    
 
     ReportsTable.insert(my_dict)
