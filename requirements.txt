@@ -11,5 +11,5 @@ pymongo==3.11.0
 Flask-Cors==3.0.4
 dnspython==2.1.0
 regex==2020.11.13
--e https://github.com/explosion/spacy-models/releases/download/en_vectors_web_lg-2.1.0/en_vectors_web_lg-2.1.0.tar.gz#egg=en_core_web_s
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm
 model_script
