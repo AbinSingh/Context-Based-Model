@@ -46,6 +46,8 @@ def get_delay():
     
     # Pass the input and get the output
     mydict=model_script.model_builder(text,model)
+    
+    mydict['Input']=text
    
     # Store the output in the database
     ReportsTable.insert(mydict)
