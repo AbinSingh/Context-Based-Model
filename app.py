@@ -49,7 +49,7 @@ def get_delay():
     
     print(mydict)
     
-    return render_template('home.html')
+    return render_template('result.html',user_data=mydict)
       
 
 if __name__ == '__main__':
