@@ -46,12 +46,10 @@ def get_delay():
     
     # Pass the input and get the output
     mydict=model_script.model_builder(text,model)
-    
-    # Create a dataframe to capture the input & output
-    result=pd.DataFrame({'Input':text,'Ouput_Dict':mydict})
-    
+   
     # Store the output in the database
-    ReportsTable.insert(result)
+    ReportsTable.insert(mydict)
+    ReportsTable.insert(text)
         
     return render_template('result.html',user_data=mydict)
       
