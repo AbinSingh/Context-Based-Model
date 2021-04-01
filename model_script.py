@@ -4,8 +4,7 @@ import spacy
 import pandas as pd
 import re
 
-
-def model_builder(text):
+def model_builder(text,model):
     import spacy
     #import en_core_web_sm
     import pandas as pd
