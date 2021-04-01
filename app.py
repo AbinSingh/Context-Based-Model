@@ -9,12 +9,9 @@ import numpy as np
 import pandas as pd
 
 import spacy
-#import en_core_web_sm
-
 import re
-
+# Script file to create entity and preprocess
 import model_script
-
 
 model='en_core_web_sm'
 
@@ -22,19 +19,24 @@ model='en_core_web_sm'
 # connection_url='mongodb+srv://abin:dbpassword@cluster0.b8byd.mongodb.net/test?retryWrites=true&w=majority'
 connection_url = os.environ.get('MONGODB_URL')
 
+## Instantiate the app
 app = Flask(__name__)
+
+# Connect to mongodb 
 client = pymongo.MongoClient(connection_url)
 
 # Access the Database 
 Database = client.get_database('Ideapoke') 
-# Access the Table 
 
+# Access the Table 
 ReportsTable = Database.Reports
 
+# Decorator to route the home page
 @app.route('/')
 def home():
     return render_template('home.html')
 
+# Decorator to retun the result page
 @app.route('/getdelay', methods=['POST'])
 def get_delay():
     # get the input from the html page
@@ -42,13 +44,15 @@ def get_delay():
     
     text=result['text']
     
+    # Pass the input and get the output
     mydict=model_script.model_builder(text,model)
-   
-
-    ReportsTable.insert(mydict)
     
-    print(mydict)
+    # Create a dataframe to capture the input & output
+    output=pd.DataFrame({'Input':text,'Output':mydict})
     
+    # Store the output in the database
+    ReportsTable.insert(output)
+        
     return render_template('result.html',user_data=mydict)
       
 
