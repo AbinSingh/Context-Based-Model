@@ -47,7 +47,7 @@ def get_delay():
 
     ReportsTable.insert(mydict)
     
-    return render_template(mydict)
+    return mydict
       
 
 if __name__ == '__main__':
