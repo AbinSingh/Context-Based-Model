@@ -47,7 +47,7 @@ def get_delay():
 
     ReportsTable.insert(mydict)
     
-    print(my_dict)
+    print(mydict)
     
     return render_template('home.html')
       
