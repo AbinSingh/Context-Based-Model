@@ -49,7 +49,6 @@ def get_delay():
    
     # Store the output in the database
     ReportsTable.insert(mydict)
-    ReportsTable.insert(text)
         
     return render_template('result.html',user_data=mydict)
       
