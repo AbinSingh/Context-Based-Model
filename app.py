@@ -45,7 +45,7 @@ def get_delay():
     mydict=model_script.model_builder(text,model)
    
 
-    ReportsTable.insert(my_dict)
+    ReportsTable.insert(mydict)
     
     return render_template('home.html',mydict)
       
