@@ -1,15 +1,16 @@
 
 import spacy
-import en_core_web_sm
+#import en_core_web_sm
 import pandas as pd
 import re
 
 
 def model_builder(text):
     import spacy
-    import en_core_web_sm
+    #import en_core_web_sm
     import pandas as pd
     import re
+    
     text=text
     #nlp = en_core_web_sm.load()
     nlp = spacy.load('en_core_web_sm')
