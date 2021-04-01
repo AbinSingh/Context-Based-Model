@@ -18,8 +18,8 @@ import model_script
 
 
 # connect to the mongoDB cloud
-connection_url='mongodb+srv://abin:dbpassword@cluster0.b8byd.mongodb.net/test?retryWrites=true&w=majority'
-#connection_url = os.environ.get('MONGODB_URL')
+# connection_url='mongodb+srv://abin:dbpassword@cluster0.b8byd.mongodb.net/test?retryWrites=true&w=majority'
+connection_url = os.environ.get('MONGODB_URL')
 
 app = Flask(__name__)
 client = pymongo.MongoClient(connection_url)
