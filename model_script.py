@@ -11,7 +11,8 @@ def model_builder(text):
     import pandas as pd
     import re
     text=text
-    nlp = en_core_web_sm.load()
+    #nlp = en_core_web_sm.load()
+    nlp = spacy.load('en_core_web_sm')
     doc=nlp(text)
 
     ## Extract entities and Labels ##
